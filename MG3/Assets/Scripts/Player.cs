@@ -51,8 +51,9 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             Kick();
+            Debug.Log("Kick");
         }
-
+         
         // Set animation state params
         _animator.SetBool("walking", _rigidbody.linearVelocity.x != 0.0f);
         _animator.SetBool("inAir", _rigidbody.linearVelocity.y != 0.0f);
@@ -86,7 +87,8 @@ public class Player : MonoBehaviour
     {
         // Inside this method, increase the value of _points by one,
         // and update the _pointsText text with text displaying the new value of _points.
-        
+        _points++;
+        _pointsText.text = _points.ToString();
     }
     // STEP 10 -----------------------------------------------------------------
 
